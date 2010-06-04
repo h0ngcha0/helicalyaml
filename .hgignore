@@ -1,0 +1,9 @@
+
+syntax: regexp
+^target$
+^bin$
+^\.settings$
+^\.project$
+^\.classpath$
+^\.manager$
+^\.scala_dependencies$
