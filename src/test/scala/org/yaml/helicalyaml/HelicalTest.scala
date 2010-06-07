@@ -9,7 +9,7 @@ class HelicalTest {
 
     @Test
     def testDumpScalar() {
-    	val yaml = new Helical()
+    	val yaml = new HelicalYaml()
         assertEquals("aaa\n", yaml.dump("aaa"))
         assertEquals("1\n", yaml.dump(1))
         assertEquals("false\n", yaml.dump(false))
@@ -17,10 +17,17 @@ class HelicalTest {
     
     @Test
     def testLoadScalar() {
-    	val yaml = new Helical()
+    	val yaml = new HelicalYaml()
         assertEquals("aaa", yaml.load("aaa"))
         assertEquals(1, yaml.load("1"))
         assertEquals(false, yaml.load("false"))
+    }
+    
+    @Test
+    def testDumpList() {
+    	val yaml = new HelicalYaml()
+        assertEquals("[1, 2, 3]\n", yaml.dump(List(1, 2, 3)))
+        assertEquals("[3, 2, 1]\n", yaml.dump(3 :: 2 :: 1 :: Nil))
     }
 }
 
