@@ -1,8 +1,8 @@
 package org.yaml.helicalyaml
 
-import org.yaml.snakeyaml._
-import org.yaml.snakeyaml.representer._
-import org.yaml.snakeyaml.nodes._
+import org.yaml.snakeyaml.{Yaml, Dumper, DumperOptions}
+import org.yaml.snakeyaml.representer.{Represent, Representer}
+import org.yaml.snakeyaml.nodes.{Node, Tag}
 import scala.collection.JavaConversions._
 
 class HelicalYaml  {
@@ -20,7 +20,7 @@ class HelicalYaml  {
 
 class ScalaRepresenter extends Representer {
 
-  multiRepresenters.put(classOf[::[Object]], new RepresentList())
+  multiRepresenters.put(classOf[List[Object]], new RepresentList())
   multiRepresenters.put(classOf[Map[_ <: Object, _ <: Object]], new RepresentMap())
 
   private class RepresentList extends Represent {

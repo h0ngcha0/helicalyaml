@@ -35,6 +35,13 @@ class HelicalTest {
     	val yaml = new HelicalYaml()
         assertEquals("{aaa: 1, bbb: 2, ccc: 3}\n", yaml.dump(Map("aaa" -> 1, "bbb" -> 2, "ccc" -> 3)))
     }
+    
+    @Test(expected=classOf[org.yaml.snakeyaml.error.YAMLException])
+    def testDumpTuple() {
+    	val yaml = new HelicalYaml()
+    	//TODO Tuple does not work
+        yaml.dump(("aaa", 3, true))
+    }
 }
 
 
