@@ -29,6 +29,12 @@ class HelicalTest {
         assertEquals("[1, 2, 3]\n", yaml.dump(List(1, 2, 3)))
         assertEquals("[3, 2, 1]\n", yaml.dump(3 :: 2 :: 1 :: Nil))
     }
+    
+    @Test
+    def testDumpMap() {
+    	val yaml = new HelicalYaml()
+        assertEquals("{aaa: 1, bbb: 2, ccc: 3}\n", yaml.dump(Map("aaa" -> 1, "bbb" -> 2, "ccc" -> 3)))
+    }
 }
 
 
