@@ -1,0 +1,1 @@
+HelicalYAML is a YAML 1.1 parser and emitter for Scala. It is implemented as a wrapper around SnakeYAML. The project is not maintained at the moment.
